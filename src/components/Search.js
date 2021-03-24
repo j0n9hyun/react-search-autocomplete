@@ -6,12 +6,6 @@ import * as THREE from 'three';
 const Search = () => {
   const [input, setInput] = useState('');
   const [suggestion, setSuggestion] = useState([]);
-  // const onChange = (e) => {
-  //   setInput(e.target.value);
-  //   suggestion.filter((v) => {
-  //     return v.includes(input.toLowerCase());
-  //   });
-  // };
 
   const onChange = useCallback(
     (e) => {
@@ -33,7 +27,6 @@ const Search = () => {
     );
 
     var renderer = new THREE.WebGLRenderer({ alpha: true });
-    // renderer.setSize(window.innerWidth, window.innerHeight);
     renderer.setSize(window.outerWidth / 3, window.outerHeight / 3);
     document.body.appendChild(renderer.domElement);
 
@@ -56,23 +49,6 @@ const Search = () => {
     animate();
   }, []);
 
-  // const onKeyUp = (e) => {};
-
-  // const inactivityTime = function () {
-  //   let time;
-  //   document.onkeyup = resetTimer;
-
-  //   function muyaho() {
-  //     console.log('무야호');
-  //     fake();
-  //   }
-
-  //   function resetTimer() {
-  //     clearTimeout(time);
-  //     time = setTimeout(muyaho, 1000);
-  //     // 1000 milliseconds = 1 second
-  //   }
-  // };
   const fake = async () => {
     await axios
       .get('https://jsonplaceholder.typicode.com/users')
