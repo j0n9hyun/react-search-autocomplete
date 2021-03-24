@@ -1,0 +1,48 @@
+@import './common.scss';
+canvas {
+  position: absolute;
+  top: -40px;
+  // top: 50%;
+  right: 33.5%;
+}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 300px;
+  z-index: 1;
+  // height: 100vh;
+  margin: 0 auto;
+  flex-direction: column;
+  .header {
+    color: orange;
+    margin-top: 250px;
+    font-size: 3rem;
+  }
+  .searchbar {
+    margin-top: 50px;
+    border: 1px solid pink;
+    outline: none;
+    width: 500px;
+    height: 30px;
+    padding-left: 5px;
+  }
+  .autoComplete {
+    visibility: hidden;
+    width: 500px;
+    transition: all 0.2s ease-in-out;
+    list-style: none;
+    &.active {
+      visibility: visible;
+      background-color: pink;
+      // box-shadow: 3px 5px 3px 5px rgba(#333, #333, #333, #abd);
+    }
+  }
+}
+li {
+  margin-top: 5px;
+  margin-bottom: 8px;
+  margin-left: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
